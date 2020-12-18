@@ -1,13 +1,37 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <el-button @click="AxiosTest">好的</el-button>
+    <el-button @click="originTest">原生请求</el-button>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    AxiosTest () {
+      this.$fetch({
+        url: '/getMe',
+        method: 'get',
+        params: {
+          // user: 'user',
+          // name: 'name'
+        }
+      }).then((res) => {
+        if (res.code === 200) {
+          console.log('Successfully!!!!!!!!!!!!!!!!!')
+        }
+      })
+    },
+    originTest () {
+      this.$axios.post('/postMe').then((res) => {
+        console.log('Post....', res)
+      }).catch((err) => {
+        console.log(err)
+      })
+    }
+  }
 }
 </script>
 
