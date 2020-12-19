@@ -1,6 +1,6 @@
 const mutations = {
-  initUtils (state) {
-    console.log('Init NetCall as webRTC version successful')
+  isLoginMut (state, bool) {
+    state.isLogin = bool
   }
 }
 export default mutations

@@ -1,6 +1,6 @@
 const actions = {
-  initUtils (context) {
-    context.commit('initUtils')
+  isLoginAct (context, bool) {
+    context.commit('isLoginMut', bool)
   }
 }
 export default actions

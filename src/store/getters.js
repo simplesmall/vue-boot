@@ -1,6 +1,6 @@
 const getters = {
-  countGet: state => {
-    return state.counter
+  isLoginGetter: state => {
+    return state.isLogin
   }
 }
 export default getters
