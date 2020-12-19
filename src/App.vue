@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <el-button @click="AxiosTest">好的</el-button>
-    <el-button @click="originTest">原生请求</el-button>
+    <el-button @click="FetchTest">Fetch request</el-button>
+    <el-button @click="AxiosTest">Axios request</el-button>
     <router-view/>
   </div>
 </template>
@@ -10,22 +10,19 @@
 export default {
   name: 'App',
   methods: {
-    AxiosTest () {
+    FetchTest () {
       this.$fetch({
-        url: '/getMe',
-        method: 'get',
-        params: {
-          // user: 'user',
-          // name: 'name'
-        }
+        url: '/api/s?wd=好玩&pn=70&oq=好玩&ie=utf-8&usm=1&rsv_pq=eb42c8e40000898e&rsv_t=0f11KvFYYzLxo9ixfH3TVLi5S9Mx9QH84PME77AZ7aEgJDH8HtlBa9GaDrA',
+        method: 'get'
       }).then((res) => {
+        console.log('Successfully before........')
         if (res.code === 200) {
           console.log('Successfully!!!!!!!!!!!!!!!!!')
         }
       })
     },
-    originTest () {
-      this.$axios.post('/postMe').then((res) => {
+    AxiosTest () {
+      this.$axios.get('/axo').then((res) => {
         console.log('Post....', res)
       }).catch((err) => {
         console.log(err)
