@@ -38,7 +38,7 @@
             <div class="leftSideBar"><LeftSideBar></LeftSideBar></div>
             <div class="indexContent">
               <el-card class="contentCard">
-                数据内容都放这显示
+              <router-view/>
               </el-card>
             </div>
           </div>
@@ -47,7 +47,6 @@
     </template>
     <!--<el-button @click="FetchTest">Fetch request</el-button>
     <el-button @click="AxiosTest">Axios request</el-button>-->
-    <router-view/>
   </div>
 </template>
 

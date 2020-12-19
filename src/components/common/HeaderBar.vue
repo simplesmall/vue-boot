@@ -1,6 +1,9 @@
 <template>
   <div class="headerBar">
     头部放置系统图标，设置等
+    <router-link to="/demo">
+      <a href="/demo">数据测试</a>
+    </router-link>
     <el-button @click="logout">退出登录</el-button>
     <el-button @click="drawer = true" type="warning" style="margin-left: 16px;">
       点我打开
@@ -31,7 +34,13 @@ export default {
   },
   methods: {
     logout () {
+      this.$message({
+        type: 'info',
+        message: '退出登录',
+        duration: 2000
+      })
       this.$store.dispatch('isLoginAct', false)
+      this.$router.push('/')
     }
   },
   components: {
