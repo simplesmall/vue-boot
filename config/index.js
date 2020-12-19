@@ -20,11 +20,11 @@ module.exports = {
           '^/api': ''
         }
       },
-      '/axo':{
-        target: 'http://www.forthee.cn',
+      '/zhihu':{
+        target: 'https://www.zhihu.com/',
         changeOrigin: true,
         pathRewrite: {
-          '^/axo':''
+          '^/zhihu':''
         }
       }
     },

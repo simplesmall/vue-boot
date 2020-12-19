@@ -4,14 +4,12 @@ import { Message, Loading, MessageBox } from 'element-ui'
 
 import router from '@/router/index'
 import { statusMessage, codeList } from '@/utils/request-code'
-// import BaseURL from '../config/BaseURL'
 // fetch方法参数说明
 // contentType为true   --  application/x-www-form-urlencoded;charset=UTF-8
 
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
-  // baseURL: BaseURL.URL,
   withCredentials: true, // send cookies when cross-domain requests
   timeout: 3000000, // request timeout
 
